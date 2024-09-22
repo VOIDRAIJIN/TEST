@@ -28,14 +28,102 @@
     </head>
     <body>
          <div class="content">
-        <h1> BUY MY EDITING PACK WHICH IS ONLY ₱216,120,900,793,567,673,984.07 <br> IT HAS 10 THINGS SHAKES YOUTH SHAKES AGGRESIVE SHAKES COLOUR CORRECTION AND GITCHES AND TRANSITIONS PFP GLITCH ETC.</h1>
+       
+             <h1> BUY MY EDITING PACK WHICH IS ONLY ₱216.07 <br> IT HAS 10 THINGS SHAKES YOUTH SHAKES AGGRESIVE SHAKES COLOUR CORRECTION AND GITCHES AND TRANSITIONS PFP GLITCH ETC.</h1>
              
         <a href="https://payhip.com/b/I1h93">Visit More of my packs </a>
           <br> <a href="https://www.youtube.com/watch?v=NdfQSeJYn1g">here are some tutorials i found that are doing edits </a>
            <br> <a href="https://www.youtube.com/watch?v=0WL5Q_6LIRs">Visit More of my tutorials. </a>
             <p>
                 <img src="idk.jpeg" width="300" height="auto" />
-                  </p>
+</p>
+   </div>
+      <h2>Audio Player</h2>
+    <audio id="myAudio">
+      <source src="SDPInterlude.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <div class="audio-controls">
+      <button onclick="playAudio()">Play Audio</button>
+      <button onclick="pauseAudio()">Pause Audio</button>
+      <button onclick="stopAudio()">Stop Audio</button>
     </div>
+    <div class="volume-control">
+      <label for="volumeControl">Volume:</label>
+      <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1" oninput="adjustVolume()">
+    </div>
+    <div class="progress-container">
+      <div id="progressBar"></div>
+      <div id="progressTime">0:00 / 0:00</div>
+    </div>
+    <img src="Bike.jpg" alt="Bike" width="300" height="auto">
+    <div id="debug"></div>
+        <script>
+      const audio = document.getElementById("myAudio");
+      const volumeControl = document.getElementById("volumeControl");
+      const debugElement = document.getElementById("debug");
+      const progressBar = document.getElementById("progressBar");
+      const progressTime = document.getElementById("progressTime");
+
+      function playAudio() {
+        document.getElementById("myAudio").play().then(() => {
+          debugElement.textContent = "Audio playing successfully";
+          updateProgress();
+        }).catch(e => {
+          console.error("Error playing audio:", e);
+          debugElement.textContent = "Error playing audio: " + e.message;
+        });
+      }
+
+      function pauseAudio() {
+        audio.pause();
+        debugElement.textContent = "Audio paused";
+      }
+
+      function stopAudio() {
+        audio.pause();
+        audio.currentTime = 0;
+        updateProgress();
+        debugElement.textContent = "Audio stopped";
+      }
+
+      function adjustVolume() {
+        audio.volume = volumeControl.value;
+        debugElement.textContent = "Volume adjusted to " + (volumeControl.value * 100) + "%";
+      }
+
+      function formatTime(seconds) {
+        const minutes = Math.floor(seconds / 60);
+        const remainingSeconds = Math.floor(seconds % 60);
+        return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+      }
+
+      function updateProgress() {
+        const progress = (audio.currentTime / audio.duration) * 100;
+        progressBar.style.width = `${progress}%`;
+        progressTime.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
+
+        if (!audio.paused) {
+          requestAnimationFrame(updateProgress);
+        }
+      }
+
+      // Initialize volume
+      adjustVolume();
+
+      // Check if audio file is loaded
+      audio.addEventListener('loadeddata', () => {
+        debugElement.textContent = "Audio file loaded successfully";
+        updateProgress();
+      });
+
+      audio.addEventListener('error', (e) => {
+        console.error("Error loading audio file:", e);
+        debugElement.textContent = "Error loading audio file: " + e.message;
+      });
+
+      // Update progress when seeking
+      audio.addEventListener('seeked', updateProgress);
+    </script>
     </body>   
 </html>
