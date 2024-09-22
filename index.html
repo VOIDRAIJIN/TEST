@@ -23,8 +23,45 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-    </style>
+       }
+     .audio-controls {
+        margin-top: 10px;
+      }
+      .volume-control {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+      }
+      .volume-control label {
+        margin-right: 10px;
+      }
+      #debug {
+        margin-top: 20px;
+        color: red;
+      }
+      .progress-container {
+        width: 300px;
+        height: 20px;
+        background-color: #f0f0f0;
+        margin-top: 10px;
+        position: relative;
+      }
+      #progressBar {
+        width: 0;
+        height: 100%;
+        background-color: #4CAF50;
+        position: absolute;
+        transition: width 0.1s;
+      }
+      #progressTime {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 12px;
+        line-height: 20px;
+      }
+            </style>
     </head>
     <body>
          <div class="content">
