@@ -4,64 +4,64 @@
         <title>
             HI I AM Æ.Xen
         </title>
-            <style>
-        body {
-            background-image: url('MY BG.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            font-family: Arial, sans-serif;
+        <style>
+            body {
+                background-image: url('MY BG.jpg');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                font-family: Arial, sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
+            .content {
+                background-color: rgba(255, 255, 255, 0.8);
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0,0,0,0.1);
+           }
+         .audio-controls {
+            margin-top: 10px;
+          }
+          .volume-control {
             display: flex;
-            justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .content {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-       }
-     .audio-controls {
-        margin-top: 10px;
-      }
-      .volume-control {
-        display: flex;
-        align-items: center;
-        margin-top: 10px;
-      }
-      .volume-control label {
-        margin-right: 10px;
-      }
-      #debug {
-        margin-top: 20px;
-        color: red;
-      }
-      .progress-container {
-        width: 300px;
-        height: 20px;
-        background-color: #f0f0f0;
-        margin-top: 10px;
-        position: relative;
-      }
-      #progressBar {
-        width: 0;
-        height: 100%;
-        background-color: #4CAF50;
-        position: absolute;
-        transition: width 0.1s;
-      }
-      #progressTime {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 12px;
-        line-height: 20px;
-      }
-            </style>
+            margin-top: 10px;
+          }
+          .volume-control label {
+            margin-right: 10px;
+          }
+          #debug {
+            margin-top: 20px;
+            color: red;
+          }
+          .progress-container {
+            width: 300px;
+            height: 20px;
+            background-color: #f0f0f0;
+            margin-top: 10px;
+            position: relative;
+          }
+          #progressBar {
+            width: 0;
+            height: 100%;
+            background-color: #4CAF50;
+            position: absolute;
+            transition: width 0.1s;
+          }
+          #progressTime {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12px;
+            line-height: 20px;
+          }
+        </style>
     </head>
     <body>
          <div class="content">
@@ -77,8 +77,8 @@
      <p>
         <img src="EDIT.JPG" alt="Bike" width="300" height="auto">  
      </p>  
-</div>
-             <h2>Audio Player</h2>
+
+          <h2>Audio Player</h2>
     <audio id="myAudio">
       <source src="SDPInterlude.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
@@ -98,6 +98,8 @@
     </div>
     <div id="debug">
            </div>
+        
+</div>
    
         <script>
       const audio = document.getElementById("myAudio");
