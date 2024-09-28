@@ -19,6 +19,18 @@
                 flex-direction: column;
                 align-items: center;
             }
+            .image-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+}
+.image-container img {
+    width: calc(50% - 10px);
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+}
             .content {
                 background-color: rgba(255, 255, 255, 0.8);
                 padding: 20px;
@@ -72,10 +84,10 @@
         <a href="https://payhip.com/b/I1h93">Visit More of my packs </a>
           <br> <a href="https://www.youtube.com/watch?v=NdfQSeJYn1g">here are some tutorials i found that are doing edits </a>
            <br> <a href="https://www.youtube.com/watch?v=0WL5Q_6LIRs">Visit More of my tutorials. </a>
-       <p>
-                <img src="idk.jpeg" width="300" height="auto" />
-                   <img src="EDIT.JPG" alt="Bike" width="300" height="auto">  
-</p>
+    <div class="image-container">
+    <img src="idk.jpeg" alt="IDK Image">
+    <img src="EDIT.JPG" alt="Edit Image">
+</div>
      
 
          <h2>Audio Player</h2>
