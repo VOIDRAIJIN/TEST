@@ -120,18 +120,15 @@
         
 
    <h2>Video Players</h2>
-    <button onclick="showYouTubeVideo()">Play YouTube Video</button>
-    <button onclick="showMP4Video()">Play MP4 Video</button>
+    <button onclick="showYouTubeVideo1()">Play YouTube Video 1</button>
+    <button onclick="showYouTubeVideo2()">Play YouTube Video 2</button>
     
-    <div id="youtubeContainer" class="video-container">
-      <iframe id="youtubeVideo" width="560" height="315" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <div id="youtubeContainer1" class="video-container">
+      <iframe id="youtubeVideo1" class="youtube-video" width="560" height="315" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
     
-    <div id="mp4Container" class="video-container">
-      <video id="mp4Video" width="560" height="315" controls>
-        <source src="Nagi.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+    <div id="youtubeContainer2" class="video-container">
+      <iframe id="youtubeVideo2" class="youtube-video" width="560" height="315" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
              </div>
         <script>
@@ -222,6 +219,28 @@
           console.error("Error playing MP4 video:", e);
           // Handle the error (e.g., show an error message to the user)
         });
+      }
+
+      function showYouTubeVideo1() {
+        const youtubeContainer1 = document.getElementById('youtubeContainer1');
+        const youtubeVideo1 = document.getElementById('youtubeVideo1');
+        const youtubeContainer2 = document.getElementById('youtubeContainer2');
+
+        // Replace 'VIDEO_ID_1' with the actual YouTube video ID you want to play
+        youtubeVideo1.src = 'https://www.youtube.com/embed/Vq8e5bqkU3c?autoplay=1';
+        youtubeContainer1.style.display = 'block';
+        youtubeContainer2.style.display = 'none';
+      }
+ 
+      function showYouTubeVideo2() {
+        const youtubeContainer1 = document.getElementById('youtubeContainer1');
+        const youtubeContainer2 = document.getElementById('youtubeContainer2');
+        const youtubeVideo2 = document.getElementById('youtubeVideo2');
+
+        // Replace 'VIDEO_ID_2' with the actual YouTube video ID you want to play
+        youtubeVideo2.src = 'https://www.youtube.com/embed/TB_l2vpSG6Y?autoplay=1';
+        youtubeContainer2.style.display = 'block';
+        youtubeContainer1.style.display = 'none';
       }
     </script>
     </body>   
