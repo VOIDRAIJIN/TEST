@@ -120,6 +120,12 @@
         
 
    <h2>Video Players</h2>
+             <div  id="mp4Container" class="video-container">
+      <video id="mp4Video" width="560" height="315" controls>
+        <source src="XEN.MP4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+  </div>
     <button onclick="showYouTubeVideo1()">Play YouTube Video 1</button>
     <button onclick="showYouTubeVideo2()">Play YouTube Video 2</button>
     
@@ -130,12 +136,7 @@
     <div id="youtubeContainer2" class="video-container">
       <iframe id="youtubeVideo2" class="youtube-video" width="560" height="315" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
-  <div  id="mp4Container" class="video-container">
-      <video id="mp4Video" width="560" height="315" controls>
-        <source src="XEN.MP4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-  </div>
+  
          </div>
         <script>
       const audio = document.getElementById("myAudio");
